@@ -1,4 +1,4 @@
-const Flight = require('../models/flights');
+const Flight = require('../models/flight');
 
 module.exports = {
   index,
@@ -14,8 +14,15 @@ function index (req, res){
   })
 }
 
-function create(req, res){}
+function create(req, res){
+	const flight = new Flight(req.body);
+	flight.save(function(err) {
+		// one way to handle errors
+		if (err) return res.render('flights/new');
+		res.redirect('/flights');
+});
+}
 
 function newFlight(req, res){
-	res.render('flights/new')
+	res.render('flights/new') //will take us to new.ejs
 }

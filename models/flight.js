@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 // optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema; 
 
-const flightSchema = new Schema ({
+const flightSchema = new Schema({
     airline: {
 			type: String, 
 			enum: ['American', 'Delta', 'Southwest', 'United']
@@ -21,7 +21,7 @@ const flightSchema = new Schema ({
 			type: Date, 
 			default: function(){
 				let today = new Date(); 
-				let nextYear = today.setFullYear(today.getFullYear()+1)
+				let nextYear = today.setFullYear(today.getFullYear()+1);
 				return nextYear
 			}
 		}

@@ -4,9 +4,9 @@
 
 1. Use express generator to create a `mongoose-flights` project.
 
-2. Create a **config/database.js** module that connects to a database named `flights`. Be sure to require the module in **server.js**.
+2. Create a **config/database.js** module that connects to a database named `flights`. 
 
-3. Create a `Flight` Model with the following properties: (enum, look at the extra stuff in the lesson from today)
+3. Create a `Flight` Model with the following properties:
 
 	| Property | Type | Validations | Default Value |
 	|---|---|---|---|

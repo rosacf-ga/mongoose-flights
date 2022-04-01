@@ -3,10 +3,28 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema; 
 
 const flightSchema = new Schema ({
-    airline: String, 
-    airport: String, 
-    flightNo: Number,
-    departs: Date
+    airline: {
+			type: String, 
+			enum: ['American', 'Delta', 'Southwest', 'United']
+		},
+    airport:  {
+			type: String, 
+			enum: ['ATL', 'DFW', 'DEN', 'LAX', 'SAN']
+		},
+		flightNo: {
+			type: Number,
+			required: true,
+			min: 10, 
+			max: 9999
+		},
+    departs: {
+			type: Date, 
+			default: function(){
+				let today = new Date(); 
+				let nextYear = today.setFullYear(today.getFullYear()+1)
+				return nextYear
+			}
+		}
 })
 
 module.exports = mongoose.model('Flight', flightSchema);

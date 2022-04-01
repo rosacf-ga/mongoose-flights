@@ -2,7 +2,7 @@
 
 ## Exercises
 
-1. Use express generator to create a `mongoose-flights` project. Be sure to install the node modules after you cd into the project.
+1. Use express generator to create a `mongoose-flights` project.
 
 2. Create a **config/database.js** module that connects to a database named `flights`. Be sure to require the module in **server.js**.
 

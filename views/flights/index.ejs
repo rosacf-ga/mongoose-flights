@@ -1,37 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>Document</title>
-</head>
-<body> 
-	<nav>
-		<button><a href="/flights/new">Add Flight</a></button>
-		<button><a href="/flights">All Flights</a></button>
-	</nav>
+<%- include('../partials/header') %>
     <h2>All Flights</h2>
 		<table> 
 			<tr> 
 				<th>Airline</th>
 				<th>Airport</th>
-				<th>Flight No.</th>
-				<th>Departure</th>
+				<th>Flight No.</th> 
+				<th>Date</th>
+				<th>Time</th>
 			</tr>
 			<% flights.forEach(f => { %>
 			<tr> 
 				<td><%= f.airline %> </td>
 				<td><%= f.airport %> </td>
-				<td><%= f.flightNo %> </td>		
-				<td><%= f.departs %> </td>		
+				<td><%= f.flightNo %> </td>	
+				<!-- splits long date into date and time -->
+				<td><%= f.departs.toDateString() %> </td>	
+				<td><%= f.departs.toLocaleTimeString() %> </td>	
+				<td><button><a href="/flights/<%= f._id %>">DETAILS</a></button></td>		
 			</tr>
 			<% }); %>
 </body>
 </html>
-
-<!-- airline
-airport 
-flightNo 
-departs  -->

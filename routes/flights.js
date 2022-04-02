@@ -16,6 +16,8 @@ router.post('/', flightsController.create);
 
 //return form to add a new post// what you see, empty form
 //takes us to this page to start making new post
-router.get('/new', flightsController.new)
+router.get('/new', flightsController.new) 
+
+router.get('/:id', flightsController.show)
 
 module.exports = router;

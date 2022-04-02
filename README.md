@@ -1,6 +1,6 @@
-# mongoose-flights
+# Mongoose Flights Lab
 
-## Exercises
+## Part 1
 
 1. Use express generator to create a `mongoose-flights` project.
 
@@ -23,3 +23,24 @@
 	- AAU, I want to be able to access each view via a navigation bar at the top of the page with links to:
 		- `ALL FLIGHTS`, and
 		- `ADD FLIGHT`
+
+## Part 2
+
+1. Create a `destinationSchema` that will provide the structure for _destination_ subdocuments that will be embedded:
+
+	| Property | Type | Validations | Default Value |
+	|---|---|---|---|
+	| `airport`| `String`| `enum` to include<br>'AUS', 'DFW', 'DEN', 'LAX' & 'SAN' | n/a |
+	| `arrival`| `Date`| n/a | n/a | 
+
+2. Add the following additional property to the `Flight` Model:
+
+	| Property | Type | Validations | Default Value |
+	|---|---|---|---| 
+	| `destinations`| `[destinationSchema]`| n/a | n/a | 
+
+3. Implement the following User Story:<br>_AAU, when viewing the list of flights, I want to click on a "detail" link displayed next to each flight to view all of the properties for that flight (`show` view), including each of its destinations._
+
+5. Implement the following User Story:<br>_AAU, when viewing the details page (`show` view) for a flight, I want to be able to add a destination for that flight._  Each destination, as defined by the schema above, includes an `arrival` date/time & one of the established airport codes._<br>
+
+4. Implement the following User Story:<br>_AAU, when viewing the details page (`show` view) for a flight, I want to see a list of that flight's `destinations` (`airport` & `arrival`)_

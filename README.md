@@ -44,3 +44,25 @@
 5. Implement the following User Story:<br>_AAU, when viewing the details page (`show` view) for a flight, I want to be able to add a destination for that flight._  Each destination, as defined by the schema above, includes an `arrival` date/time & one of the established airport codes._<br>
 
 4. Implement the following User Story:<br>_AAU, when viewing the details page (`show` view) for a flight, I want to see a list of that flight's `destinations` (`airport` & `arrival`)_
+
+## Part 3
+
+1. Create a `ticketSchema` that will be compiled into a `Ticket` Model with the following properties:
+
+	| Property | Type | Validations | Default Value |
+	|---|---|---|---|
+	| `seat`| `String`| Must be 'A1' thru 'F99' (see hints) | n/a |
+	| `price`| `Number`| Minimum of `0` | n/a |
+	| `flight`| `ObjectId`| Include `ref: 'Flight'` to enable population | n/a |
+
+	
+	
+	Define the `seat` property as follows:<br>`seat: {type: String, match: /[A-F][1-9]\d?/}` -
+	
+
+2. Modify the `show` view for a _flight_ to render a list of _tickets_ that have been created for that _flight_.
+
+
+3. Also on the flight's `show` view, display a **New Ticket** link that when clicked, shows the ticket's `new` view used to create a _ticket_ for the _flight_. When the form is submitted, create the _ticket_ on the server and redirect back to the _flight's_ `show` view.
+
+ 

@@ -57,7 +57,7 @@
 
 	
 	
-	Define the `seat` property as follows:<br>`seat: {type: String, match: /[A-F][1-9]\d?/}` -
+	Define the `seat` property as follows:<br>`seat: {type: String, match: /[A-F][1-9]\d?/}` 
 	
 
 2. Modify the `show` view for a _flight_ to render a list of _tickets_ that have been created for that _flight_.

@@ -8,7 +8,8 @@ require('./config/database');
 
 var indexRouter = require('./routes/index');
 const flightsRouter = require('./routes/flights');
-const destinationsRouter = require('./routes/destinations')
+const destinationsRouter = require('./routes/destinations');
+const ticketsRouter = require('./routes/tickets')
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', destinationsRouter); //nested resources will always mount in server.js at '/'
 app.use('/flights', flightsRouter);
+app.use('/', ticketsRouter);
 app.use('/', indexRouter);
 
 
